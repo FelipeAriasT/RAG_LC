@@ -3,9 +3,13 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Ignorar directorio data
+/data/
+/retriever/
+
 # C extensions
 *.so
-
+*.DS_Store
 # Distribution / packaging
 .Python
 build/

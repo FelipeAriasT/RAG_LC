@@ -871,6 +871,8 @@ def plot_multiple_pages(file_path: str, page_numbers: list) -> None:
     # Cerrar el documento PDF
     pdf_doc.close()
 
+    return fig
+
 
 def plot_multiple_pages_vertical(file_path: str, page_numbers: list) -> None:
     """
