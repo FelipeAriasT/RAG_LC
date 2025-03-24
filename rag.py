@@ -98,9 +98,10 @@ def query_expansion(state: State) -> State:
     if state["use_query_expansion"]:
         if "progress_callback" in state and state["progress_callback"]:
             state["progress_callback"].update_progress("query_expansion")
-        expanded_query = query_expansion_response(state["query_original"], llm).content
+
+        expanded_query = query_expansion_response(state["query_original"], llm)
         state['cost'] += ur.estimar_costo(expanded_query, state['model'])        
-        state["query_final"] = f"{state['query_original']} {expanded_query}"
+        state["query_final"] = f"{state['query_original']} {expanded_query.content}"
     else:
         state["query_final"] = state["query_original"]
     
